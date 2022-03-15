@@ -1,5 +1,9 @@
 package hello.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component //bean 이름 변경하고 싶으면 @Component("memberService2") 형식 사용하기
 public class MemberServiceImpl implements MemberService{
   // 구현체가 하나만 있을 때 뒤에 Impl을 붙여서 사용한다. MemberService의 구현체이다.
 
@@ -7,6 +11,7 @@ public class MemberServiceImpl implements MemberService{
     private final MemberRepository memberRepository; //이전처럼 MemberServiceImpl이 구현체를 설정하는 것이 아닌, AppConfig에서 구현체를 지정하기 위함
 
     //생성자를 통해 AppConfig에서 설정한 구현체를 넣어주도록 설정 (의존관계 주입)
+    @Autowired //의존관계 자동주입 ac.getBean(MemberRepository.class)의 역할을 함
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
