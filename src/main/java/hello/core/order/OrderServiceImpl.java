@@ -15,8 +15,11 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy; // DIP를 위반하지 않도록 설정, final을 붙이면 무조건 값을 할당해야 하므로, final을 지운다.
 
-    @Autowired //생성자 위에 입력, 생성시 자동으로 의존성 주입하도록
+    // @Autowired //생성자 위에 입력, 생성시 자동으로 의존성 주입하도록 + 생성자 하나라면 @Autowired 없이도 자동으로 의존관계를 주입함
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        System.out.println("memberRepository = " + memberRepository);
+        System.out.println("discountPolicy = " + discountPolicy);
+        // 둘다 값이 출력되었으므로, 생성자 하나일때는 @Autowired 없이도 자동 주입
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
