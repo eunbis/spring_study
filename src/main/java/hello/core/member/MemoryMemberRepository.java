@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
+@Component //하위 클래스 빈에 저장시 "memoryMemberRepository"로 저장됨
 public class MemoryMemberRepository implements MemberRepository{
 // DB 확정이 되지 않았기 때문에 MemoryMemberRepository로 만들었음 -> 메모리에서만 사용가능, 테스트 용도로만 사용
 // MemberRepository의 구현체
