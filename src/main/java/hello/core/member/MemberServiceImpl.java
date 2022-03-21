@@ -3,7 +3,7 @@ package hello.core.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component //bean 이름 변경하고 싶으면 @Component("memberService2") 형식 사용하기
+@Component("service")
 public class MemberServiceImpl implements MemberService{
   // 구현체가 하나만 있을 때 뒤에 Impl을 붙여서 사용한다. MemberService의 구현체이다.
 
