@@ -3,7 +3,7 @@ package hello.core.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("service")
+@Component
 public class MemberServiceImpl implements MemberService{
   // 구현체가 하나만 있을 때 뒤에 Impl을 붙여서 사용한다. MemberService의 구현체이다.
 
