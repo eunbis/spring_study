@@ -52,7 +52,8 @@ public class AppConfig { //Application 전체를 설정하고 구성(어떻게 �
     public OrderService orderService() {
         System.out.println("call AppConfig.orderService");
         // return new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
-        return new OrderServiceImpl(memberRepository(), discountPolicy());
+        // return new OrderServiceImpl(memberRepository(), discountPolicy());
+        return null; // 필드 주입 test시 에러 방지
     }
 
     // 마찬가지로 DiscountPolicy 역할도 추가해줌
